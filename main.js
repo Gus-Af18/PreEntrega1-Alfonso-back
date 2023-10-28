@@ -1,9 +1,10 @@
+//create the class constructor
 class ProductManager {
   constructor() {
     this.products = [];
     this.nextId = 1;
   }
-
+//add the products and verify if they exist
   addProduct(product) {
     if (!this.isProductValid(product)) {
       console.log("Error: El producto no es valido");
@@ -16,11 +17,11 @@ class ProductManager {
     product.id = this.nextId++;
     this.products.push(product);
   }
-
+//obtain the next product
   getProducts() {
     return this.products;
   }
-
+//obtain the total number of products by id
   getProductsById(id) {
     const product = this.products.find((p) => p.id == id);
     if (product) {
@@ -29,7 +30,7 @@ class ProductManager {
       console.log("Error: Not found product");
     }
   }
-
+//
   isProductValid(product) {
     return (
       product.title &&
